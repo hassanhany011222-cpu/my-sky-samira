@@ -1166,3 +1166,409 @@ body {
             scale(1);
     }
 }
+
+/* ==========================================
+   FINAL SCREEN
+========================================== */
+
+#finalStage {
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    align-items: flex-start;
+
+    padding:
+        35px 15px;
+}
+
+
+.final-content {
+
+    width: 100%;
+
+    max-width: 650px;
+
+    margin: auto;
+
+    padding:
+        20px 10px 50px;
+
+    text-align: center;
+}
+
+
+/* ==========================================
+   الصورة الرئيسية
+========================================== */
+
+.main-photo-frame {
+
+    width: min(82vw, 400px);
+
+    height: min(56vh, 470px);
+
+    margin:
+        0 auto 28px;
+
+    overflow: hidden;
+
+    border-radius: 26px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.2);
+
+    box-shadow:
+
+        0 0 30px
+        rgba(140,170,255,0.25),
+
+        0 0 80px
+        rgba(90,120,230,0.15);
+
+    opacity: 0;
+
+    transform:
+        scale(0.88)
+        translateY(20px);
+
+    animation:
+        finalPhotoReveal
+        2s ease forwards;
+}
+
+
+.main-photo-frame img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* ==========================================
+   SAMIRA
+========================================== */
+
+.final-content h2 {
+
+    margin-bottom: 25px;
+
+    font-size:
+        clamp(38px, 9vw, 60px);
+
+    font-weight: 300;
+
+    letter-spacing: 5px;
+
+    opacity: 0;
+
+    animation:
+        finalTextReveal
+        1.5s ease forwards;
+
+    animation-delay: 1s;
+
+    text-shadow:
+
+        0 0 10px white,
+
+        0 0 25px #a7bbff,
+
+        0 0 55px #6585ff,
+
+        0 0 90px #4967d9;
+}
+
+
+/* ==========================================
+   النصوص
+========================================== */
+
+.final-text {
+
+    opacity: 0;
+
+    animation:
+        finalTextReveal
+        1.5s ease forwards;
+
+    animation-delay: 1.7s;
+}
+
+
+.final-text p {
+
+    margin:
+        14px auto;
+
+    font-size:
+        clamp(18px, 4vw, 25px);
+
+    line-height: 1.9;
+
+    font-weight: 300;
+
+    color:
+        rgba(255,255,255,0.9);
+
+    text-shadow:
+        0 0 10px
+        rgba(255,255,255,0.25);
+}
+
+
+/* ==========================================
+   زر الرسالة
+========================================== */
+
+#finalMessageBtn {
+
+    margin-top: 25px;
+
+    padding:
+        13px 32px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.25);
+
+    border-radius: 50px;
+
+    background:
+        rgba(255,255,255,0.07);
+
+    color: white;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    animation:
+        finalTextReveal
+        1.5s ease forwards;
+
+    animation-delay: 2.5s;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+#finalMessageBtn:hover {
+
+    transform:
+        scale(1.06);
+
+    background:
+        rgba(255,255,255,0.13);
+
+    box-shadow:
+        0 0 25px
+        rgba(255,170,205,0.25);
+}
+
+
+#finalMessageBtn:active {
+
+    transform:
+        scale(0.96);
+}
+
+
+/* ==========================================
+   الرسالة المخفية
+========================================== */
+
+#finalMessage {
+
+    display: none;
+
+    margin-top: 30px;
+
+    padding:
+        10px 5px 30px;
+
+    animation:
+        finalMessageReveal
+        2s ease forwards;
+}
+
+
+#finalMessage.show {
+
+    display: block;
+}
+
+
+#finalMessage p {
+
+    font-size:
+        clamp(19px, 4vw, 27px);
+
+    line-height: 2;
+
+    font-weight: 300;
+
+    color: white;
+
+    text-shadow:
+        0 0 12px
+        rgba(255,255,255,0.35);
+}
+
+
+#finalMessage strong {
+
+    display: block;
+
+    margin-top: 25px;
+
+    font-size:
+        clamp(25px, 6vw, 38px);
+
+    font-weight: 400;
+
+    color: white;
+
+    text-shadow:
+
+        0 0 12px
+        #ffb6d5,
+
+        0 0 30px
+        #ff6fa8;
+}
+
+
+/* ==========================================
+   I CHOOSE YOU
+========================================== */
+
+.choose-you {
+
+    margin-top: 40px;
+
+    font-size:
+        clamp(30px, 8vw, 55px);
+
+    font-weight: 300;
+
+    letter-spacing: 2px;
+
+    color: white;
+
+    text-shadow:
+
+        0 0 15px white,
+
+        0 0 35px #ff9fc7,
+
+        0 0 70px #ff6fa8;
+
+    animation:
+        heartGlow
+        2s ease-in-out infinite;
+}
+
+
+/* ==========================================
+   Animations
+========================================== */
+
+@keyframes finalPhotoReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(0.88)
+            translateY(20px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+}
+
+
+@keyframes finalTextReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes finalMessageReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes heartGlow {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+        filter:
+            drop-shadow(
+                0 0 10px
+                rgba(255,120,170,0.4)
+            );
+    }
+
+    50% {
+
+        transform:
+            scale(1.04);
+
+        filter:
+            drop-shadow(
+                0 0 25px
+                rgba(255,120,170,0.8)
+            );
+    }
+}
