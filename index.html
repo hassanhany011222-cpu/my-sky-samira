@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>To Samira ✨</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main id="app">
+
+        <!-- =========================
+             1. شاشة البداية
+        ========================== -->
+
+        <section id="intro" class="screen active">
+
+            <div class="intro-content">
+
+                <p class="intro-line">
+                    بصي للسماء كويس... ✨
+                </p>
+
+                <p class="intro-line">
+                    يمكن تلاقي فيها حاجات كتير...
+                </p>
+
+                <p class="intro-line">
+                    بس أنا لقيت فيها حاجة واحدة بس.
+                </p>
+
+                <button id="startBtn">
+                    ابدئي ✨
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             2. الصورة الأولى
+        ========================== -->
+
+        <section id="photoOne" class="screen">
+
+            <div class="photo-stage">
+
+                <div class="photo-frame">
+
+                    <img
+                        src="./photo1.jpeg"
+                        alt="Samira"
+                    >
+
+                </div>
+
+                <p class="photo-message">
+                    كل ما أبص في صورتك، بتخيل وبنبهر أكتر من كل مرة.
+                </p>
+
+                <button id="photoNext">
+                    كملي ✨
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             3. مرحلة النجوم
+        ========================== -->
+
+        <section id="starsStage" class="screen">
+
+            <div id="interactiveStars"></div>
+
+            <div class="stars-title">
+
+                <p>
+                    اضغطي على النجوم
+                </p>
+
+                <span>
+                    واكتشفي اللي مخبي فيها ✨
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             4. الصورة الثانية
+        ========================== -->
+
+        <section id="photoTwo" class="screen">
+
+            <div class="photo-stage">
+
+                <div class="photo-frame">
+
+                    <img
+                        src="./photo2.jpeg"
+                        alt="Samira"
+                    >
+
+                </div>
+
+                <p class="photo-message">
+                    أما شوفتك... إنتي أجمل في الواقع فوق ما تخيلت.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             5. النجمة الأخيرة
+        ========================== -->
+
+        <section id="finalStar" class="screen">
+
+            <div class="final-star-content">
+
+                <p>
+                    لسه فيه نجمة واحدة...
+                </p>
+
+                <div id="finalStarButton">
+                    ✦
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             6. تكوين SAMIRA
+        ========================== -->
+
+        <section id="samiraStage" class="screen">
+
+            <div id="samiraStars"></div>
+
+            <h1 id="samiraName">
+                SAMIRA
+            </h1>
+
+        </section>
+
+
+        <!-- =========================
+             7. النهاية
+        ========================== -->
+
+        <section id="finalStage" class="screen">
+
+            <div class="final-content">
+
+                <div class="main-photo-frame">
+
+                    <img
+                        src="./photo3.jpeg"
+                        alt="Samira"
+                    >
+
+                </div>
+
+                <h2>
+                    SAMIRA ❤️
+                </h2>
+
+                <p>
+                    كل نجمة هنا كانت حاجة بحبها فيكي...
+                </p>
+
+                <p>
+                    لكن الحقيقة؟
+                </p>
+
+                <p>
+                    أنا مش محتاج نجوم عشان أعرف إنك مميزة.
+                </p>
+
+                <button id="finalMessageBtn">
+                    اضغطي هنا ❤️
+                </button>
+
+                <div id="finalMessage">
+
+                    <p>
+                        يمكن معرفش أوصف كل اللي جوايا بالكلام،
+                        بس لو كان ممكن أختار شخص واحد
+                        أشاركه كل أيامي...
+                    </p>
+
+                    <strong>
+                        هختارك إنتِ. ❤️
+                    </strong>
+
+                    <div class="choose-you">
+                        I Choose You. ❤️
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         الموسيقى
+    ========================== -->
+
+    <audio
+        id="backgroundMusic"
+        loop
+        preload="auto"
+    >
+        <source src="./music.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>  
