@@ -1,0 +1,1089 @@
+/* ==========================================
+   SAMIRA STARS
+   CSS — السماء والتصميم
+========================================== */
+
+
+/* ==========================================
+   الإعدادات العامة
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+
+    font-family:
+        "Segoe UI",
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    background: #020611;
+    color: white;
+}
+
+
+/* ==========================================
+   التطبيق الرئيسي
+========================================== */
+
+#app {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(35, 55, 110, 0.30),
+            transparent 45%
+        ),
+        linear-gradient(
+            180deg,
+            #01030b 0%,
+            #030817 50%,
+            #01030a 100%
+        );
+}
+
+
+/* ==========================================
+   الشاشات
+========================================== */
+
+.screen {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    z-index: 5;
+
+    transition:
+        opacity 1.2s ease,
+        visibility 1.2s ease;
+}
+
+.screen.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* ==========================================
+   شاشة البداية
+========================================== */
+
+#intro {
+    text-align: center;
+}
+
+.intro-content {
+    position: relative;
+
+    width: 90%;
+    max-width: 700px;
+
+    z-index: 20;
+
+    text-align: center;
+}
+
+
+/* النصوص */
+
+.intro-line {
+    margin-bottom: 16px;
+
+    font-size:
+        clamp(22px, 4vw, 38px);
+
+    font-weight: 300;
+
+    line-height: 1.8;
+
+    letter-spacing: 1px;
+
+    opacity: 0;
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.45),
+        0 0 30px rgba(130,160,255,0.25);
+
+    animation:
+        introText 2s ease forwards;
+}
+
+.intro-line:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.intro-line:nth-child(2) {
+    animation-delay: 2.5s;
+}
+
+.intro-line:nth-child(3) {
+    animation-delay: 4.5s;
+}
+
+
+/* ==========================================
+   زر ابدئي
+========================================== */
+
+#startBtn {
+    margin-top: 40px;
+
+    padding: 14px 38px;
+
+    border:
+        1px solid rgba(255,255,255,0.3);
+
+    border-radius: 50px;
+
+    background:
+        rgba(255,255,255,0.07);
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 0 15px rgba(150,180,255,0.15);
+
+    opacity: 0;
+
+    animation:
+        buttonAppear 1.5s ease forwards 6.5s;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+#startBtn:hover {
+    transform: scale(1.06);
+
+    background:
+        rgba(255,255,255,0.13);
+
+    box-shadow:
+        0 0 30px rgba(150,180,255,0.35);
+}
+
+#startBtn:active {
+    transform: scale(0.96);
+}
+
+
+/* ==========================================
+   النجوم الخلفية
+========================================== */
+
+#starsContainer {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.background-star {
+    position: absolute;
+
+    display: block;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 4px rgba(255,255,255,0.8),
+        0 0 10px rgba(180,200,255,0.6);
+
+    opacity: 0.2;
+
+    animation:
+        starTwinkle ease-in-out infinite;
+}
+
+
+/* ==========================================
+   الصورة الأولى والثانية
+========================================== */
+
+.photo-stage {
+    position: relative;
+
+    z-index: 20;
+
+    width: 100%;
+    height: 100%;
+
+    padding:
+        30px
+        20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+
+/* إطار الصورة */
+
+.photo-frame {
+    width: min(78vw, 390px);
+
+    height: min(58vh, 480px);
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    border:
+        1px solid rgba(255,255,255,0.18);
+
+    background: rgba(255,255,255,0.03);
+
+    box-shadow:
+        0 0 30px rgba(120,150,255,0.18),
+        0 0 90px rgba(80,110,220,0.08);
+
+    opacity: 0;
+
+    transform:
+        scale(0.88)
+        translateY(20px);
+
+    animation:
+        photoAppear 1.8s ease forwards;
+}
+
+
+/* الصورة */
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* نص الصورة */
+
+.photo-message {
+    width: min(90%, 650px);
+
+    margin-top: 28px;
+
+    font-size:
+        clamp(20px, 4vw, 30px);
+
+    line-height: 1.8;
+
+    font-weight: 300;
+
+    opacity: 0;
+
+    animation:
+        messageAppear 1.8s ease forwards 1.2s;
+
+    text-shadow:
+        0 0 12px rgba(255,255,255,0.4),
+        0 0 30px rgba(130,160,255,0.2);
+}
+
+
+/* زر الانتقال */
+
+#photoNext {
+    margin-top: 25px;
+
+    padding: 12px 32px;
+
+    border:
+        1px solid rgba(255,255,255,0.25);
+
+    border-radius: 50px;
+
+    background:
+        rgba(255,255,255,0.06);
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    animation:
+        buttonAppear 1.3s ease forwards 3.5s;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+#photoNext:hover {
+    transform: scale(1.06);
+
+    background:
+        rgba(255,255,255,0.12);
+}
+
+
+/* ==========================================
+   مرحلة النجوم التفاعلية
+========================================== */
+
+#starsStage {
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* عنوان مرحلة النجوم */
+
+.stars-title {
+    position: absolute;
+
+    top: 9%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 90%;
+
+    text-align: center;
+
+    z-index: 20;
+
+    pointer-events: none;
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.4);
+}
+
+.stars-title p {
+    font-size:
+        clamp(22px, 5vw, 34px);
+
+    margin-bottom: 8px;
+}
+
+.stars-title span {
+    font-size:
+        clamp(15px, 3vw, 19px);
+
+    color:
+        rgba(255,255,255,0.65);
+}
+
+
+/* ==========================================
+   النجوم التفاعلية
+========================================== */
+
+#interactiveStars {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 15;
+}
+
+
+/* النجمة القابلة للضغط */
+
+.interactive-star {
+    position: absolute;
+
+    width: 24px;
+    height: 24px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    color: white;
+
+    font-size: 25px;
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+.interactive-star::before {
+    content: "✦";
+
+    text-shadow:
+        0 0 5px white,
+        0 0 12px #9db9ff,
+        0 0 25px #668cff;
+}
+
+.interactive-star:hover {
+    transform: scale(1.5);
+
+    filter:
+        drop-shadow(0 0 10px white);
+}
+
+
+/* ==========================================
+   كلمة النجمة
+========================================== */
+
+.star-word {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.7);
+
+    z-index: 30;
+
+    text-align: center;
+
+    white-space: nowrap;
+
+    font-size:
+        clamp(30px, 7vw, 55px);
+
+    font-weight: 300;
+
+    color: white;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    text-shadow:
+        0 0 10px white,
+        0 0 25px #8ba7ff,
+        0 0 50px #5276e8;
+
+    animation:
+        wordAppear 2.5s ease forwards;
+}
+
+
+/* ==========================================
+   الصورة الثانية
+========================================== */
+
+#photoTwo {
+    background:
+        rgba(0,0,0,0.12);
+}
+
+
+/* ==========================================
+   النجمة الأخيرة
+========================================== */
+
+#finalStar {
+    text-align: center;
+}
+
+.final-star-content {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 35px;
+}
+
+.final-star-content p {
+    font-size:
+        clamp(22px, 5vw, 35px);
+
+    font-weight: 300;
+
+    text-shadow:
+        0 0 15px rgba(255,255,255,0.5);
+}
+
+
+/* النجمة الكبيرة */
+
+#finalStarButton {
+    width: 90px;
+    height: 90px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    color: white;
+
+    font-size: 65px;
+
+    cursor: pointer;
+
+    text-shadow:
+        0 0 10px white,
+        0 0 30px #9bb5ff,
+        0 0 60px #668cff;
+
+    animation:
+        finalStarPulse 2s ease-in-out infinite;
+
+    transition:
+        transform 0.3s ease;
+}
+
+#finalStarButton:hover {
+    transform: scale(1.2);
+}
+
+
+/* ==========================================
+   مرحلة SAMIRA
+========================================== */
+
+#samiraStage {
+    overflow: hidden;
+
+    flex-direction: column;
+}
+
+#samiraName {
+    position: relative;
+
+    z-index: 50;
+
+    font-size:
+        clamp(45px, 12vw, 110px);
+
+    font-weight: 300;
+
+    letter-spacing:
+        clamp(5px, 2vw, 18px);
+
+    color: white;
+
+    text-shadow:
+        0 0 10px white,
+        0 0 25px #a7bcff,
+        0 0 60px #6585ff,
+        0 0 100px #4967d9;
+
+    opacity: 0;
+
+    transform: scale(0.7);
+
+    transition:
+        opacity 2s ease,
+        transform 2s ease;
+}
+
+#samiraName.show {
+    opacity: 1;
+
+    transform: scale(1);
+}
+
+
+/* ==========================================
+   النجوم حول الاسم
+========================================== */
+
+#samiraStars {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 40;
+}
+
+
+/* ==========================================
+   المرحلة النهائية
+========================================== */
+
+#finalStage {
+    overflow-y: auto;
+
+    padding: 30px 15px;
+}
+
+.final-content {
+    width: 100%;
+
+    max-width: 650px;
+
+    padding:
+        30px 15px;
+
+    text-align: center;
+}
+
+
+/* الصورة الرئيسية */
+
+.main-photo-frame {
+    width: min(78vw, 390px);
+
+    height: min(55vh, 460px);
+
+    margin: 0 auto 25px;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    border:
+        1px solid rgba(255,255,255,0.2);
+
+    box-shadow:
+        0 0 35px rgba(130,160,255,0.25),
+        0 0 100px rgba(80,110,220,0.12);
+
+    animation:
+        finalPhotoAppear 2s ease forwards;
+}
+
+.main-photo-frame img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* اسم سميرة */
+
+.final-content h2 {
+    margin-bottom: 25px;
+
+    font-size:
+        clamp(35px, 8vw, 55px);
+
+    font-weight: 300;
+
+    text-shadow:
+        0 0 15px #a5baff,
+        0 0 35px #6585ff;
+}
+
+
+/* رسائل النهاية */
+
+.final-content p {
+    margin: 15px auto;
+
+    font-size:
+        clamp(18px, 4vw, 25px);
+
+    line-height: 1.9;
+
+    font-weight: 300;
+
+    color:
+        rgba(255,255,255,0.9);
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.25);
+}
+
+
+/* زر الرسالة */
+
+#finalMessageBtn {
+    margin-top: 25px;
+
+    padding: 13px 32px;
+
+    border:
+        1px solid rgba(255,255,255,0.25);
+
+    border-radius: 50px;
+
+    background:
+        rgba(255,255,255,0.07);
+
+    color: white;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+#finalMessageBtn:hover {
+    transform: scale(1.06);
+
+    background:
+        rgba(255,255,255,0.13);
+}
+
+
+/* الرسالة النهائية مخفية */
+
+#finalMessage {
+    display: none;
+
+    margin-top: 30px;
+
+    animation:
+        messageAppear 1.5s ease forwards;
+}
+
+#finalMessage.show {
+    display: block;
+}
+
+#finalMessage strong {
+    display: block;
+
+    margin-top: 25px;
+
+    font-size:
+        clamp(24px, 5vw, 34px);
+
+    font-weight: 400;
+
+    color: white;
+
+    text-shadow:
+        0 0 15px #ffb6d5,
+        0 0 30px #ff6fa8;
+}
+
+.choose-you {
+    margin-top: 35px;
+
+    font-size:
+        clamp(28px, 7vw, 50px);
+
+    font-weight: 300;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 15px white,
+        0 0 35px #ff9fc7,
+        0 0 70px #ff6fa8;
+}
+
+
+/* ==========================================
+   Animations
+========================================== */
+
+@keyframes introText {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes buttonAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes starTwinkle {
+
+    0% {
+        opacity: 0.15;
+
+        transform:
+            scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            scale(1.4);
+    }
+
+    100% {
+        opacity: 0.15;
+
+        transform:
+            scale(0.8);
+    }
+}
+
+
+@keyframes photoAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.88)
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+}
+
+
+@keyframes messageAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes wordAppear {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.7);
+    }
+
+    25% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.08);
+    }
+}
+
+
+@keyframes finalStarPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+
+        filter:
+            drop-shadow(0 0 10px white);
+    }
+
+    50% {
+        transform: scale(1.15);
+
+        filter:
+            drop-shadow(0 0 30px white);
+    }
+}
+
+
+@keyframes finalPhotoAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+}
+
+
+/* ==========================================
+   تحسين الموبايل
+========================================== */
+
+@media (max-width: 600px) {
+
+    .intro-content {
+        width: 88%;
+    }
+
+    .intro-line {
+        font-size: 21px;
+
+        line-height: 1.9;
+    }
+
+    #startBtn {
+        margin-top: 30px;
+
+        font-size: 16px;
+
+        padding:
+            12px 30px;
+    }
+
+    .photo-frame {
+        width: 82vw;
+        height: 52vh;
+    }
+
+    .photo-message {
+        font-size: 20px;
+
+        line-height: 1.8;
+    }
+
+    .stars-title {
+        top: 7%;
+    }
+
+    .interactive-star {
+        width: 30px;
+        height: 30px;
+    }
+
+    #finalStarButton {
+        width: 80px;
+        height: 80px;
+
+        font-size: 58px;
+    }
+
+    .main-photo-frame {
+        width: 82vw;
+        height: 52vh;
+    }
+}
+
+
+/* ==========================================
+   تقليل الحركة لمن يفضل ذلك
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
+}
